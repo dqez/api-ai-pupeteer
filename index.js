@@ -55,7 +55,8 @@ function getUserInput(question) {
     await page.type('input[type="email"]', email, { delay: 50 });
 
     // await delay(1000);
-    await page.click('input[type="submit"]');
+    await page.click('button[type="submit"]');
+
     bar.update(50);
 
     // Chờ cho trường mật khẩu xuất hiện và nhập mật khẩu
@@ -63,7 +64,7 @@ function getUserInput(question) {
     await page.type('input[type="password"]', password, { delay: 50 });
     await delay(1000);
 
-    await page.click('button[type="submit"]');
+    await page.click('button[aria-disabled="false"]');
     bar.update(70);
 
     // Chờ hoàn tất quá trình đăng nhập
