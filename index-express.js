@@ -136,7 +136,7 @@ async function startApi() {
             console.log('sendding response!');
             res.json({ response });
         } catch (error) {
-            console.error(`--- Error processing prompt "${prompt}":`, error.message);
+            console.error('--- Error processing prompt:', prompt, ":", error.message);
             res.status(500).json({ error: `failed to get response from CHAT: ${error.message}` });
         }
     });
